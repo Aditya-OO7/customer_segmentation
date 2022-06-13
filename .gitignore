@@ -1,2 +1,5 @@
 .dist
-.venv/*
+venv
+.idea
+__pycache__
+
