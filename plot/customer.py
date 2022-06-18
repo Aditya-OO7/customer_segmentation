@@ -25,6 +25,26 @@ def rfm_plot(rfm):
     st.write(fig)
 
 
+def rfm_log_plot(rfm):
+    fig = make_subplots(rows=3, cols=1,
+                        subplot_titles=("log_Frequency",
+                                        "log_Recency",
+                                        "log_Monetary"))
+
+    fig.append_trace(go.Histogram(x=rfm.log_Frequency),
+                     row=1, col=1)
+
+    fig.append_trace(go.Histogram(x=rfm.log_Recency),
+                     row=2, col=1)
+
+    fig.append_trace(go.Histogram(x=rfm.log_Monetary),
+                     row=3, col=1)
+
+    fig.update_layout(height=800, width=800)
+
+    st.write(fig)
+
+
 def k_plot(k_values_distances):
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=k_values_distances["clusters"],

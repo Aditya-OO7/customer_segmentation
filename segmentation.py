@@ -13,6 +13,7 @@ from processing.customer import (
 
 from plot.customer import (
     rfm_plot,
+    rfm_log_plot,
     k_plot,
     cluster_plot,
     cluster_graph_plot,
@@ -71,7 +72,7 @@ if st.session_state['start']:
 
         rfm = rfm_processing(rfm)
         st.subheader("Distribution of the Features after Logarithm Transformation")
-        rfm_plot(rfm)
+        rfm_log_plot(rfm)
 
     with st.expander("K values"):
         k_values = find_k(rfm)
